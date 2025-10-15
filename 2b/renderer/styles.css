@@ -1,0 +1,48 @@
+/* Full-bleed: niente margini */
+html, body {
+  height: 100%;
+  margin: 0;
+  
+}
+#clock {
+  width: 100vw;
+  height: 100vh;
+  display: block;   /* niente centering */
+  padding: 0;
+}
+
+/* Griglia 60×60 che riempie tutto lo schermo */
+.grid.grid-60x60 {
+  /* dimensione “ideale” di una cella = il lato min tra (larghezza/60) e (altezza/60) */
+  --cell: min(calc(100vw / 60), calc(9vh / 60));
+  /* gap che scala con la cella, senza rubare troppo spazio */
+  --gap: clamp(0px, calc(var(--cell) * 0.12), 10px);
+
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+
+  /* occupa tutto: 60×60 frazioni; i gap sono compresi dentro i 100vw/100vh */
+  grid-template-columns: repeat(60, 1fr);
+  grid-template-rows: repeat(60, 1fr);
+  gap: var(--gap);
+
+  /* niente centraggio: riempi */
+  align-content: stretch;
+  justify-content: stretch;
+}
+
+.grid.grid-60x60 .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* il glifo scala in base alla cella disponibile */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  line-height: 1;
+
+  opacity: 0.25;              /* in linea con BASE_OPACITY */
+  transition: opacity 80ms linear;
+}
+.grid.grid-60x60 .cell.is-active { opacity: 1; }

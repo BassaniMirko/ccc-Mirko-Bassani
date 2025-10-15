@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CC</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="clock" class="clock" role="grid"></div>
+    </div>
+    <div id="time" class="time">00:00:00</div>
+    <div class="stat">Battery: <span id="batteria">...</span>%</div>
+    <div class="stat">CPU Load: <span id="cpu">...</span>%</div>
+    <div class="stat">RAM Usage: <span id="ram">...</span>%</div>
+    <div class="stat">Mouse Position: <span id="mouse-coords">--</span></div>
+
+    <!-- Uptime -->
+    <div class="stat">Uptime: <span id="uptime">00:00:00</span></div>
+    <!-- Termometro CPU -->
+    <div class="stat">
+      CPU Thermometer<br />
+      <span id="cpu-thermometer-label">0%</span>
+    </div>
+
+    <script src="render.js"></script>
+    <script src="clock.js"></script>
+  </body>
+</html>
