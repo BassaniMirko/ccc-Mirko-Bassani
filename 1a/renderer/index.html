@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CC</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Canvas XOR: i triangoli sono disegnati qui con globalCompositeOperation='xor' -->
+    <canvas id="xorCanvas" class="xor"></canvas>
+
+    <!-- (DISATTIVATO) STACK vecchio dei triangoli DOM -->
+    <div id="stack" aria-hidden="true">
+      <div class="shape" id="shape-battery" title="battery"></div>
+      <div class="shape" id="shape-cpu" title="cpu"></div>
+      <div class="shape" id="shape-ram" title="ram"></div>
+      <div class="shape" id="shape-uptime" title="uptime"></div>
+    
+      <div class="shape" id="shape-mouse-x" title="mouse-x"></div>
+      <div class="shape" id="shape-mouse-y" title="mouse-y"></div>
+    </div>
+
+    <!-- Overlay rumore/texture (come prima) -->
+    <div class="noise"></div>
+
+    <!-- HUD compatto -->
+    <div class="hud">
+      <div>Battery: <span id="battery">...</span>%</div>
+      <div>CPU Load: <span id="cpu">...</span>%</div>
+      <div>RAM Usage: <span id="ram">...</span>%</div>
+      <div>Mouse: <span id="mouse-coords">--</span></div>
+      <div>Uptime: <span id="uptime">00:00:00</span></div>
+    </div>
+
+    <script src="render.js"></script>
+  </body>
+</html>

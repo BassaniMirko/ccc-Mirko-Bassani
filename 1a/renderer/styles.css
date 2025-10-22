@@ -1,0 +1,35 @@
+:root{
+  --tri-size: 500px;     /* riferimento visivo; ora disegniamo su canvas */
+  --tri-speed: 500ms;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  -webkit-app-region: drag;
+  font-family: monospace;
+  font-size: 12px;
+  background: #ffffff00;
+  color: #000;
+  margin: 0;
+  border: 1px solid #000; /* cornice 1px */
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+/* HUD in cima a tutto */
+.hud{
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  display: grid;
+  grid-auto-rows: 1.4em;
+  gap: 0px;
+  color: #000;
+  user-select: none;
+  pointer-events: none;
+  z-index: 40;
+}
